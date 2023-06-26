@@ -29,8 +29,9 @@ export class CoursesService {
   }
 
   create(createCourseDto: CreateCourseDto) {
-    Object.assign(createCourseDto, { id: Date.now() });
+    const newCourse = Object.assign(createCourseDto, { id: Date.now() });
     this.courses.push(createCourseDto);
+    return newCourse;
   }
 
   updateById(id: string, updateCourseDto: UpdateCourseDto) {

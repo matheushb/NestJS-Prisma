@@ -1,3 +1,4 @@
+import { PartialType } from '@nestjs/mapped-types';
 import { CreateCourseDto } from './createCourse.dto';
 
-export class UpdateCourseDto implements Partial<CreateCourseDto> {}
+export class UpdateCourseDto extends PartialType(CreateCourseDto) {}
